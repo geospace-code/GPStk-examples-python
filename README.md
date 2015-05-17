@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/scienceopen/gpstk-examples-python/badges/gpa.svg)](https://codeclimate.com/github/scienceopen/gpstk-examples-python)
+
 # gpstk-examples-python
 Examples of using GPStk 2.5 from Python
 
