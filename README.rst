@@ -16,11 +16,16 @@ Since the examples were `originally written for GPSTk 2.2 <http://www.gpstk.org/
 Example Description
 ===================
 
-=========  ====================  ==================================   ================
-Example #  works with GPSTk 2.7  Description                          Example Commmand
-=========  ====================  ==================================   ================
-1          True                  current time in several formats      ./example1.py
-=========  ====================  ==================================   ================
+=========  ===============  ==================================   ================
+Example #  works GPSTk 2.7  Description                          Example Commmand
+=========  ===============  ==================================   ================
+1          True             current time in several formats      ./example1.py
+2          True             basic RINEX read/write/query         ./example2.py
+3          Partially        is PRN in view?                      ./example3.py data/rinex3obs_data.txt
+4          False            advanced RINEX processing            ./example4.py data/rinex3obs_data.txt data/rinex3nav_data.txt
+5          True             plot elevation for the day           ./example5.py
+6          True             numerous time format conversions     ./example6.py -h
+=========  ===============  ==================================   ================
 
 Install of GPStk in Python
 ==========================
