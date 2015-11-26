@@ -28,7 +28,7 @@ GPStk requires Python 2.7.
      "$ENV{HOME}/anaconda/lib/libpython2.7.so"
      CACHE FILEPATH "File Path to system python shared object library" )  
     set( PYTHON_INCLUDE_DIRS
-     "$ENV{HOME}/anaconda/include"
+     "$ENV{HOME}/anaconda/include/python2.7"
      CACHE PATH "Directory Path to system python includes" )
     
 
