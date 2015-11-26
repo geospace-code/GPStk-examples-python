@@ -21,8 +21,7 @@ GPStk requires Python 2.7.
 
     sudo apt-get install g++ make cmake swig doxygen libsphinxbase1
 
-3) Assuming you're using Anaconda Python installed to ``~/anaconda``, create a file
-``CustomPythonSetup.cmake`` with the content::
+3) Assuming you're using Anaconda Python installed to ``~/anaconda``, create a file ``CustomPythonSetup.cmake`` with the content::
     
     set( PYTHONLIBS_FOUND "TRUE" )
     set( PYTHON_LIBRARIES 
