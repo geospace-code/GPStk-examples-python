@@ -8,8 +8,19 @@ gpstk-examples-python
 Examples of using GPStk 2.7 from Python.
 Since the examples were `originally written for GPSTk 2.2 <http://www.gpstk.org/pythondoc/examples.html>`_, some of the examples don't work anymore.
 
+.. contents::
+
 .. image:: example5.png
     :alt: example 5
+
+Example Description
+===================
+
+=========  ====================  ===========                          ================
+Example #  works with GPSTk 2.7  Description                          Example Commmand
+=========  ====================  ===========                          ================
+1          True                  current time in several formats      ./example1.py
+=========  ====================  ===========                          ================
 
 Install of GPStk in Python
 ==========================
