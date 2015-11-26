@@ -5,12 +5,13 @@
 =====================
 gpstk-examples-python
 =====================
-Examples of using GPStk 2.5 from Python.
+Examples of using GPStk 2.7 from Python.
+Since the examples were `originally written for GPSTk 2.2 <http://www.gpstk.org/pythondoc/examples.html>`_, some of the examples don't work anymore.
 
 Install of GPStk in Python
 ==========================
 
-GPStk requires Python 2.7.
+GPStk requires Python 2.7. This install procedure was written for GPSTk 2.7.
 
 1) Download gpstk source::
 
@@ -33,7 +34,8 @@ GPStk requires Python 2.7.
     
 
 
-`Reference Install Procedure <https://scivision.co/installing-gpstk-in-anaconda-python/>`_
+`Reference Install Procedure -- just points back here <https://scivision.co/installing-gpstk-in-anaconda-python/>`_
+`Example Reference from GPSTk 2.2 <http://www.gpstk.org/pythondoc/examples.html>`_
 
 .. image:: example5.png
     :alt: example 5
