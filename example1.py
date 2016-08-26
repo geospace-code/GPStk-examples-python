@@ -42,16 +42,16 @@ def main():
     # Class to handle Modified Julian Date
     mjd = gpstk.MJD(comtime)
 
-    print "Hello world!"
-    print "   The current civil time is", civtime
-    print "   The current year is", ydstime.year
-    print "   The current day of year is", ydstime.doy
-    print "   The current second of day is", ydstime.sod
-    print "   The current full GPS week is", gpstime.week
-    print "   The current short GPS week is", gpstime.getModWeek()
-    print "   The current day of GPS week is", gpstime.getDayOfWeek()
-    print "   The current second of GPS week is", gpstime.sow
-    print "   The current Modified Julian Date is", mjd
+    print("Hello world!")
+    print("   The current civil time is", civtime)
+    print("   The current year is", ydstime.year)
+    print("   The current day of year is", ydstime.doy)
+    print("   The current second of day is", ydstime.sod)
+    print("   The current full GPS week is", gpstime.week)
+    print("   The current short GPS week is", gpstime.getModWeek())
+    print("   The current day of GPS week is", gpstime.getDayOfWeek())
+    print("   The current second of GPS week is", gpstime.sow)
+    print("   The current Modified Julian Date is", mjd)
 
 
 if __name__ == '__main__':
