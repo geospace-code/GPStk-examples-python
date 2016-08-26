@@ -5,7 +5,7 @@
 =====================
 gpstk-examples-python
 =====================
-Examples of using GPStk 2.7 from Python.
+Examples of using GPStk 2.9 from Python.
 Since the examples were `originally written for GPSTk 2.2 <http://www.gpstk.org/pythondoc/examples.html>`_, some of the examples don't work anymore.
 
 .. contents::
@@ -17,7 +17,7 @@ Example Description
 ===================
 
 =========  ===============  ==================================   ================
-Example #  works GPSTk 2.7  Description                          Example Commmand
+Example #  works GPSTk 2.9  Description                          Example Commmand
 =========  ===============  ==================================   ================
 1          True             current time in several formats      ./example1.py
 2          True             basic RINEX read/write/query         ./example2.py
@@ -27,30 +27,41 @@ Example #  works GPSTk 2.7  Description                          Example Commman
 6          True             numerous time format conversions     ./example6.py -h
 =========  ===============  ==================================   ================
 
-Install of GPStk in Python
-==========================
+Install of GPStk in Anaconda Python
+===================================
 
-GPStk requires Python 2.7. This install procedure was written for GPSTk 2.7.
+GPStk requires Python 2.7--here we use Anaconda Python 2.7 installed to ~/anaconda2. 
+This install procedure was written for GPSTk 2.9.
 
-1) Download gpstk source::
+1. Download gpstk source::
 
     git clone https://github.com/SGL-UT/GPSTk
     cd GPSTk
 
-2) Install prereqs::
+2. prereqs::
 
-    sudo apt-get install g++ make cmake swig doxygen libsphinxbase1
+    sudo apt-get install g++ make cmake swig doxygen
 
-3) Assuming you're using Anaconda Python installed to ``~/anaconda``, create a file ``CustomPythonSetup.cmake`` with the content::
+3. build & install::
+
+    ./build.sh -tue
     
+
+Note
+----
+If you get an error like::
+
+    CMake Error at swig/PythonSetup.cmake:45 (string): string sub-command REGEX, mode MATCH needs at least 5 arguments total to command.
+
+Create a file GPSTk/swig/CustomPythonSetup.cmake with contents (assuming python in ~/anaconda2)::
+
     set( PYTHONLIBS_FOUND "TRUE" )
-    set( PYTHON_LIBRARIES 
-     "$ENV{HOME}/anaconda/lib/libpython2.7.so"
-     CACHE FILEPATH "File Path to system python shared object library" )  
+    set( PYTHON_LIBRARIES
+        "$ENV{HOME}/anaconda2/lib/libpython2.7.so"
+        CACHE FILEPATH "File Path to system python shared object library" )
     set( PYTHON_INCLUDE_DIRS
-     "$ENV{HOME}/anaconda/include/python2.7"
-     CACHE PATH "Directory Path to system python includes" )
-    
+        "$ENV{HOME}/anaconda2/include/python2.7"
+         CACHE PATH "Directory Path to system python includes" ) 
 
 
 `Reference Install Procedure -- just points back here <https://scivision.co/installing-gpstk-in-anaconda-python/>`_
