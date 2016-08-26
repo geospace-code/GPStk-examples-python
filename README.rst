@@ -39,7 +39,7 @@ GPStk 2.9 requires Python 2.7--here we use Anaconda Python 2.7 installed to ~/an
 
 2. prereqs::
 
-    sudo apt-get install g++ make cmake swig doxygen
+    sudo apt-get install g++ make cmake swig doxygen sphinx-common
 
 3. build & install::
 
