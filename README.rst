@@ -30,8 +30,7 @@ Example #  works GPSTk 2.9  Description                          Example Commman
 Install of GPStk in Anaconda Python
 ===================================
 
-GPStk requires Python 2.7--here we use Anaconda Python 2.7 installed to ~/anaconda2. 
-This install procedure was written for GPSTk 2.9.
+GPStk 2.9 requires Python 2.7--here we use Anaconda Python 2.7 installed to ~/anaconda2. 
 
 1. Download gpstk source::
 
