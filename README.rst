@@ -47,7 +47,7 @@ GPStk 2.9 requires Python 2.7--here we use Anaconda Python 2.7 installed to ~/an
 
 3. build & install::
 
-    ./build.sh -tue
+    ./build.sh -ue
     
 
 Note
