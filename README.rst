@@ -5,7 +5,10 @@
 =====================
 gpstk-examples-python
 =====================
-Examples of using GPStk 2.9 from Python.
+
+**Note that all examples are currently (Oct 2016) broken with Python 2.7. There are numerous issues open on the GPSTk repo, but no code changes since May 2016. The issues are with GPSTk!**
+
+Examples of using GPStk from Python.
 Since the examples were `originally written for GPSTk 2.2 <http://www.gpstk.org/pythondoc/examples.html>`_, some of the examples don't work anymore.
 
 .. contents::
