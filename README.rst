@@ -1,7 +1,3 @@
-.. image:: https://codeclimate.com/github/scienceopen/gpstk-examples-python/badges/gpa.svg
-   :target: https://codeclimate.com/github/scienceopen/gpstk-examples-python
-   :alt: Code Climate
-
 =====================
 gpstk-examples-python
 =====================
