@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """
 A GPSTk example with some simple time classes and functions.
 
@@ -7,13 +6,8 @@ This is a port of the older C++ example1.cpp.
 
 Usage:
   python example1.py
-
 """
-
-
 import gpstk
-
-
 
 # In the GPSTk there are multiple classes to manage time, depending
 # on the specific operation that we want to carry out. This modular
@@ -41,13 +35,13 @@ gpstime = gpstk.GPSWeekSecond(comtime)
 # Class to handle Modified Julian Date
 mjd = gpstk.MJD(comtime)
 
-print("Hello world!")
-print("   The current civil time is {}-{}-{}T{}:{}:{}".format(civtime.year,civtime.month,civtime.day,civtime.hour,civtime.minute,civtime.second))
-print("   The current year is", ydstime.year)
-print("   The current day of year is", ydstime.doy)
-print("   The current second of day is", ydstime.sod)
-print("   The current full GPS week is", gpstime.week)
-print("   The current short GPS week is", gpstime.getModWeek())
-print("   The current day of GPS week is", gpstime.getDayOfWeek())
-print("   The current second of GPS week is", gpstime.sow)
-print("   The current Modified Julian Date is", mjd.mjd)
+
+print("current civil time is {}".format(civtime))
+print("current year is", ydstime.year)
+print("current day of year is", ydstime.doy)
+print("current second of day is", ydstime.sod)
+print("current full GPS week is", gpstime.week)
+print("current short GPS week is", gpstime.getModWeek())
+print("current day of GPS week is", gpstime.getDayOfWeek())
+print("current second of GPS week is", gpstime.sow)
+print("current Modified Julian Date is {}".format(mjd))
