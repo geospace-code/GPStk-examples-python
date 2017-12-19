@@ -29,7 +29,7 @@ basic RINEX read/write/query::
 -
 is PRN in view?::      
 
-    ./example3.py data/rinex3obs_data.txt
+    ./example3.py
     
 4
 -

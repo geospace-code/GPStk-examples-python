@@ -21,6 +21,7 @@ For example:
 # may be easier than referring to them by gpstk.L1_FREQ_GPS.
 from gpstk import C_MPS, GAMMA_GPS, L1_FREQ_GPS
 import gpstk
+import argparse
 
 
 def main():
@@ -32,7 +33,7 @@ def main():
     int_prn = int(user_input)
 
     try:
-        print('Reading ' + args.rinex3obs_filename + '.')
+        print('Reading {}'.format(args.rinex3obs_filename))
         header, data = gpstk.readRinex3Obs(args.rinex3obs_filename)  # read in everything
         print(header)
 
@@ -47,18 +48,18 @@ def main():
 
             # Check if the PRN is in view (by searching for it)
             if d.obs.find(prn) == d.obs.end():
-                print('PRN', int_prn, 'not in view')
+                print('PRN {} not in view'.format(int_prn))
 
             else:
                 P1 = d.getObs(prn, "P1", header).data
                 P2 = d.getObs(prn, "P2", header).data
                 L1 = d.getObs(prn, "L1", header).data
                 mu = P1 - L1*(C_MPS/L1_FREQ_GPS) - 2*(P1-P2)/(1-GAMMA_GPS)
-                print('PRN', int_prn, 'biased multipath', mu)
+                print('PRN {} biased multipath {}'.format(int_prn, mu))
 
     # We can catch any custom gpstk exception like this:
     except gpstk.Exception as e:
-        print e
+        print(e)
 
 
 if __name__ == '__main__':
