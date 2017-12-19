@@ -8,18 +8,18 @@ only imported and rewrote the same file. But that would be
 completely trivial for python.
 
 Usage:
-
   python example2.py
 
 """
-
 
 import gpstk
 
 
 def main():
     # Read in the rinex data
-    header, data = gpstk.readRinex3Obs('data/rinex3obs_data.txt', strict=True)
+    #rfn = 'data/rinex3obs_data.txt'
+    rfn = gpstk.getPathData() + '/test_input_rinex2_obs_RinexObsFile.06o'
+    header, data = gpstk.readRinex3Obs(rfn, strict=True)
 
     # Let's pretend we want to change something in the header
     # (otherwise this would be a two-line example!)
@@ -35,7 +35,7 @@ def main():
     print 'Latest time found:  ', gpstk.CivilTime(latest.time)
 
     # Now let's write it all back to a different file
-    gpstk.writeRinex3Obs('data/rinex3obs_data.txt.new', header, data)
+    gpstk.writeRinex3Obs(rfn+'.new', header, data)
 
 
 if __name__ == '__main__':

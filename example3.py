@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 """
-A GPSTk example featuring more complex processing. You can use the
-sample text file rinex3obs_data.txt. A PRN number that gives useful output is 5.
+An example of reading a rinex file and extracting the
+pseudrange obs and computing a biased multipath observation.
 
 This is a port of the older C++ example3.cpp.
 
@@ -15,8 +15,11 @@ For example:
 
 """
 
+# We recommend only using
+#     'import gpstk',
+# but if you need constants fairly often, then importing them specifically at once
+# may be easier than referring to them by gpstk.L1_FREQ_GPS.
 from gpstk import C_MPS, GAMMA_GPS, L1_FREQ_GPS
-import argparse  # an incredibly useful module for command line processing
 import gpstk
 
 
