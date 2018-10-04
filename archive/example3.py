@@ -54,7 +54,7 @@ def main():
                 P1 = d.getObs(prn, "P1", header).data
                 P2 = d.getObs(prn, "P2", header).data
                 L1 = d.getObs(prn, "L1", header).data
-                mu = P1 - L1*(C_MPS/L1_FREQ_GPS) - 2*(P1-P2)/(1-GAMMA_GPS)
+                mu = P1 - L1 * (C_MPS / L1_FREQ_GPS) - 2 * (P1 - P2) / (1 - GAMMA_GPS)
                 print('PRN {} biased multipath {}'.format(int_prn, mu))
 
     # We can catch any custom gpstk exception like this:

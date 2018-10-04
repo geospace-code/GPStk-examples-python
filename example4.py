@@ -1,10 +1,10 @@
 #!/usr/bin/env python
-
 """
 An example reading a RINEX obs, nav and met file and using
 PRSolution2 to compute receiver position and compare
 this to the position in the obs header.
 """
+from __future__ import print_function
 import gpstk
 
 obsfn = gpstk.getPathData() + '/arlm200z.15o'
@@ -52,7 +52,7 @@ for obsObj in obsData:
         # Rinex3ObsData to get the map of observations
         for satID, datumList in obsObj.obs.iteritems():
             # The RINEX file may have P1 observations, but the current
-             # satellite may not have them.
+            # satellite may not have them.
             P1 = 0.0
             try:
                 P1 = obsObj.getObs(satID, indexP1).data
@@ -61,8 +61,8 @@ for obsObj in obsData:
 
             ionocorr = 0.0
 
-              # If there are P2 observations, let's try to apply the
-              # ionospheric corrections
+            # If there are P2 observations, let's try to apply the
+            # ionospheric corrections
             if indexP2 >= 0:
                 # The RINEX file may have P2 observations, but the
                 # current satellite may not have them.
@@ -73,7 +73,7 @@ for obsObj in obsData:
                     continue  # Ignore this satellite if P1 is not found
                 # list 'vecList' contains RinexDatum, whose public
                 # attribute "data" indeed holds the actual data point
-                ionocorr = 1.0 / (1.0 - gpstk.GAMMA_GPS) * ( P1 - P2 )
+                ionocorr = 1.0 / (1.0 - gpstk.GAMMA_GPS) * (P1 - P2)
 
             # Now, we include the current PRN number in the first part
             # of "it" iterator into the list holding the satellites.
@@ -93,7 +93,6 @@ for obsObj in obsData:
         # here. With this value of 3e6 the solution will have a lot
         # more dispersion.
         raimSolver.RMSLimit = 3e6
-
 
         # In order to compute positions we need the current time, the
         # vector of visible satellites, the vector of corresponding
@@ -117,11 +116,10 @@ for obsObj in obsData:
         # so the rejection criterion is based on RMS residual of fit,
         # instead of RMS distance from an a priori position.
 
-
         if raimSolver.isValid():
             # Vector "Solution" holds the coordinates, expressed in
             # meters in an Earth Centered, Earth Fixed (ECEF) reference
             # frame. The order is x, y, z  (as all ECEF objects)
-            pos = gpstk.Triple(raimSolver.Solution[0],  raimSolver.Solution[1], raimSolver.Solution[2])
+            pos = gpstk.Triple(raimSolver.Solution[0], raimSolver.Solution[1], raimSolver.Solution[2])
             err = obsHeader.antennaPosition - pos
             print(err)

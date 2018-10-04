@@ -7,6 +7,7 @@ This is a port of the older C++ example1.cpp.
 Usage:
   python example1.py
 """
+from __future__ import print_function
 import gpstk
 
 # In the GPSTk there are multiple classes to manage time, depending
@@ -36,7 +37,7 @@ gpstime = gpstk.GPSWeekSecond(comtime)
 mjd = gpstk.MJD(comtime)
 
 
-print("current civil time is {}".format(civtime))
+print("current civil time is", civtime)
 print("current year is", ydstime.year)
 print("current day of year is", ydstime.doy)
 print("current second of day is", ydstime.sod)

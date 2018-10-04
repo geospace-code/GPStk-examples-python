@@ -10,7 +10,7 @@ Usage:
 
 """
 import gpstk
-from matplotlib.pyplot import figure,show
+from matplotlib.pyplot import figure, show
 
 
 # Read in data, strict=True makes dataSets a list rather than a generator:
@@ -29,7 +29,7 @@ starttime.setTimeSystem(gpstk.TimeSystem('GPS'))
 endtime = gpstk.CommonTime()  # end time, 1 day later (see below)
 endtime.setTimeSystem(gpstk.TimeSystem('GPS'))
 endtime.addDays(1)
-#%% Step through a day, adding plot points:
+# %% Step through a day, adding plot points:
 d = []
 el = []
 for t in gpstk.times(starttime, endtime, seconds=1000):

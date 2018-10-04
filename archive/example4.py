@@ -41,7 +41,6 @@ def main():
     # to the void model by default
     tropModel = noTropModel
 
-
     navHeader, navData = gpstk.readRinex3Nav(args.rinex3nav_filename)
     for navDataObj in navData:
         ephem = navDataObj.toEngEphemeris()
@@ -61,13 +60,13 @@ def main():
     # observation types are used, GPS is assumed.
     try:
         indexP1 = obsHeader.getObsIndex('P1')
-    except:
+    except BaseException:
         print 'The observation files has no P1 pseudoranges.'
         sys.exit()
 
     try:
         indexP2 = obsHeader.getObsIndex('P2')
-    except:
+    except BaseException:
         indexP2 = -1
 
     for obsObj in obsData:
@@ -110,8 +109,8 @@ def main():
 
                 ionocorr = 0.0
 
-                  # If there are P2 observations, let's try to apply the
-                  # ionospheric corrections
+                # If there are P2 observations, let's try to apply the
+                # ionospheric corrections
                 if indexP2 >= 0:
                     # The RINEX file may have P2 observations, but the
                     # current satellite may not have them.
@@ -122,7 +121,7 @@ def main():
                         continue  # Ignore this satellite if P1 is not found
                     # list 'vecList' contains RinexDatum, whose public
                     # attribute "data" indeed holds the actual data point
-                    ionocorr = 1.0 / (1.0 - gpstk.constants.GAMMA_GPS) * ( P1 - P2 )
+                    ionocorr = 1.0 / (1.0 - gpstk.constants.GAMMA_GPS) * (P1 - P2)
 
                 # Now, we include the current PRN number in the first part
                 # of "it" iterator into the list holding the satellites.
@@ -142,7 +141,6 @@ def main():
             # here. With this value of 3e6 the solution will have a lot
             # more dispersion.
             raimSolver.RMSLimit = 3e6
-
 
             # In order to compute positions we need the current time, the
             # vector of visible satellites, the vector of corresponding
@@ -166,12 +164,11 @@ def main():
             # so the rejection criterion is based on RMS residual of fit,
             # instead of RMS distance from an a priori position.
 
-
             if raimSolver.isValid():
                 # Vector "Solution" holds the coordinates, expressed in
                 # meters in an Earth Centered, Earth Fixed (ECEF) reference
                 # frame. The order is x, y, z  (as all ECEF objects)
-                x, y, z = raimSolver.Solution[0],  raimSolver.Solution[1], raimSolver.Solution[2]
+                x, y, z = raimSolver.Solution[0], raimSolver.Solution[1], raimSolver.Solution[2]
                 print "%12.5f %12.5f %12.5f" % (x, y, z)
 
 
