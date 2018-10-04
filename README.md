@@ -17,8 +17,8 @@ GPSTk Python [install procedure](https://scivision.co/gpstk-anaconda-python/)
 
 1. current time in several formats: `./example1.py`
 2. basic RINEX read/write/query: `./example2.py`
-3. is PRN in view?: `./example3.py`
-4. advanced RINEX processing: `./example4.py data/rinex3obs_data.txt data/rinex3nav_data.txt`
+3. compute biased multipath observation: `./example3.py`
+4. compute receiver position error using OBS, NAV and MET: `./example4.py`
 5. plot elevation for the day: `./example5.py`
 6. numerous time format conversions: `./example6.py -h`
 

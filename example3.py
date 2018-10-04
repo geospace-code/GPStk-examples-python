@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 
 """
-An example of reading a rinex file and extracting the
-pseudrange obs and computing a biased multipath observation.
+1. Extract pseudorange obs 
+2. compute biased multipath observation.
 """
-
-# We recommend only using
-#     'import gpstk',
-# but if you need constants fairly often, then importing them specifically at once
-# may be easier than referring to them by gpstk.L1_FREQ_GPS.
 from __future__ import print_function
 from gpstk import C_MPS, GAMMA_GPS, L1_FREQ_GPS
 import gpstk
