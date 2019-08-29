@@ -6,7 +6,7 @@ building an obsEpochMap of the data along the way.
 from __future__ import print_function
 import gpstk
 
-fn = gpstk.getPathData() + '/arlm200z.15o'
+fn = gpstk.getPathData() + "/arlm200z.15o"
 
 # read in header and get a generator for the data
 header, data = gpstk.readRinex3Obs(fn)
@@ -19,14 +19,14 @@ for d in data:
     oe.time = d.time
     for sv in list(d.obs.keys()):
         # sv is an SatID object
-        print(sv, end=' ')
+        print(sv, end=" ")
         epoch = d.obs[sv]
         soe = gpstk.SvObsEpoch()
         soe.svid = sv
         for i in range(len(epoch)):
             rinex2_obs_type = header.R2ObsTypes[i]
-            oid = header.mapObsTypes['G'][i]
-            print("{}({})={}".format(oid, rinex2_obs_type, epoch[i].data), end=' ')
+            oid = header.mapObsTypes["G"][i]
+            print("{}({})={}".format(oid, rinex2_obs_type, epoch[i].data), end=" ")
             soe[oid] = epoch[i].data
         oe[sv] = soe
         print()

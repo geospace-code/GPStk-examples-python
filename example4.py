@@ -7,9 +7,9 @@ this to the position in the obs header.
 from __future__ import print_function
 import gpstk
 
-obsfn = gpstk.getPathData() + '/arlm200z.15o'
-navfn = gpstk.getPathData() + '/arlm200z.15n'
-metfn = gpstk.getPathData() + '/arlm200z.15m'
+obsfn = gpstk.getPathData() + "/arlm200z.15o"
+navfn = gpstk.getPathData() + "/arlm200z.15n"
+metfn = gpstk.getPathData() + "/arlm200z.15m"
 
 navHeader, navData = gpstk.readRinex3Nav(navfn)
 ephStore = gpstk.gpstk.Rinex3EphemerisStore()
@@ -21,11 +21,11 @@ metHeader, metData = gpstk.readRinexMet(metfn)
 
 obsHeader, obsData = gpstk.readRinex3Obs(obsfn)
 
-indexP1 = obsHeader.getObsIndex('C1W')
-indexP2 = obsHeader.getObsIndex('C2W')
+indexP1 = obsHeader.getObsIndex("C1W")
+indexP2 = obsHeader.getObsIndex("C2W")
 raimSolver = gpstk.PRSolution2()
 
-print('X,Y,Z (meters) ECEF errors of receiver position:')
+print("X,Y,Z (meters) ECEF errors of receiver position:")
 for obsObj in obsData:
     for metObj in metData:
         if metObj.time >= obsObj.time:
@@ -50,7 +50,7 @@ for obsObj in obsData:
         # pseudoranges for the current epoch. They are correspondly fed
         # into "prnList" and "rangeList"; "obs" is a public attribute of
         # Rinex3ObsData to get the map of observations
-        for satID, datumList in obsObj.obs.iteritems():
+        for satID, _datumList in obsObj.obs:
             # The RINEX file may have P1 observations, but the current
             # satellite may not have them.
             P1 = 0.0
@@ -105,7 +105,7 @@ for obsObj in obsData:
         # 2nd argument, but the list is of RinexSatID, which is a subclass of SatID.
         # Since C++ containers are NOT covariant, it is neccessary to change the
         # output to a vector or SatID's rather thta a vector of RinexSatID's.
-        satVector = gpstk.seqToVector(prnList, outtype='vector_SatID')
+        satVector = gpstk.seqToVector(prnList, outtype="vector_SatID")
         rangeVector = gpstk.seqToVector(rangeList)
         raimSolver.RAIMCompute(time, satVector, rangeVector, ephStore, tropModel)
 
@@ -120,6 +120,8 @@ for obsObj in obsData:
             # Vector "Solution" holds the coordinates, expressed in
             # meters in an Earth Centered, Earth Fixed (ECEF) reference
             # frame. The order is x, y, z  (as all ECEF objects)
-            pos = gpstk.Triple(raimSolver.Solution[0], raimSolver.Solution[1], raimSolver.Solution[2])
+            pos = gpstk.Triple(
+                raimSolver.Solution[0], raimSolver.Solution[1], raimSolver.Solution[2]
+            )
             err = obsHeader.antennaPosition - pos
             print(err)

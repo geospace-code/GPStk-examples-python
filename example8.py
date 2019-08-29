@@ -7,7 +7,7 @@ to make up all the data that goes into the new files.
 
 import gpstk
 
-ifn = gpstk.getPathData() + '/test_input_rinex2_obs_RinexObsFile.06o'
+ifn = gpstk.getPathData() + "/test_input_rinex2_obs_RinexObsFile.06o"
 header, data = gpstk.readRinex3Obs(ifn, strict=True)
 
 new_header = gpstk.Rinex3ObsHeader()
@@ -35,11 +35,15 @@ new_header.antNo = header.antNo
 new_header.antType = header.antType
 new_header.valid = new_header.valid | gpstk.Rinex3ObsHeader.validAntennaType
 
-newAntPosition = gpstk.Triple(header.antennaPosition[0], header.antennaPosition[1], header.antennaPosition[2])
+newAntPosition = gpstk.Triple(
+    header.antennaPosition[0], header.antennaPosition[1], header.antennaPosition[2]
+)
 new_header.antennaPosition = newAntPosition
 new_header.valid = new_header.valid | gpstk.Rinex3ObsHeader.validAntennaPosition
 
-newAntDelta = gpstk.Triple(header.antennaDeltaHEN[0], header.antennaDeltaHEN[1], header.antennaDeltaHEN[2])
+newAntDelta = gpstk.Triple(
+    header.antennaDeltaHEN[0], header.antennaDeltaHEN[1], header.antennaDeltaHEN[2]
+)
 new_header.antennaDeltaHEN = newAntDelta
 new_header.valid = new_header.valid | gpstk.Rinex3ObsHeader.validAntennaDeltaHEN
 

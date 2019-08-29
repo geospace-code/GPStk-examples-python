@@ -1,17 +1,17 @@
 # GPSTk Python Examples
 
-Examples of using 
-[GPSTk](https://github.com/SGL-UT/GPSTk) 
+Examples of using
+[GPSTk](https://github.com/SGL-UT/GPSTk)
 from Python.
 The examples included by GPSTk are somewhat broken for Python.
-Some 
-[examples](http://www.gpstk.org/pythondoc/examples.html) 
+Some
+[examples](http://www.gpstk.org/pythondoc/examples.html)
 were originally written for GPSTk 2.2, but we fixed them to work with GPSTk 2.10.
 
 
 ![example 5](example5.png)
 
-GPSTk Python [install procedure](https://scivision.co/gpstk-anaconda-python/)
+GPSTk Python [install procedure](https://scivision.dev/gpstk-anaconda-python/)
 
 ## Examples
 
